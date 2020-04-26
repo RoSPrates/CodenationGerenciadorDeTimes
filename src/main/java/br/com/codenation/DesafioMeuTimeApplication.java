@@ -8,41 +8,33 @@ import br.com.codenation.desafio.app.*;
 
 public class DesafioMeuTimeApplication implements MeuTimeInterface {
 
-
     public void incluirTime(Long id, String nome, LocalDate dataCriacao, String corUniformePrincipal, String corUniformeSecundario) {
         throw new UnsupportedOperationException();
     }
-
 
     public void incluirJogador(Long id, Long idTime, String nome, LocalDate dataNascimento, Integer nivelHabilidade, BigDecimal salario) {
         throw new UnsupportedOperationException();
     }
 
-
     public void definirCapitao(Long idJogador) {
         throw new UnsupportedOperationException();
     }
-
 
     public Long buscarCapitaoDoTime(Long idTime) {
         throw new UnsupportedOperationException();
     }
 
-
     public String buscarNomeJogador(Long idJogador) {
         throw new UnsupportedOperationException();
     }
-
 
     public String buscarNomeTime(Long idTime) {
         throw new UnsupportedOperationException();
     }
 
-
     public List<Long> buscarJogadoresDoTime(Long idTime) {
         throw new UnsupportedOperationException();
     }
-
 
     public Long buscarMelhorJogadorDoTime(Long idTime) {
         throw new UnsupportedOperationException();
@@ -60,7 +52,7 @@ public class DesafioMeuTimeApplication implements MeuTimeInterface {
         throw new UnsupportedOperationException();
     }
 
-    @Override
+
     public BigDecimal buscarSalarioDoJogaodor(Long idJogador) {
         return null;
     }
