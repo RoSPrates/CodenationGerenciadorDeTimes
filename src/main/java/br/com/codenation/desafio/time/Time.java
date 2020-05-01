@@ -4,6 +4,7 @@ import br.com.codenation.desafio.exceptions.CapitaoNaoInformadoException;
 import br.com.codenation.desafio.jogador.Jogador;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Time {
 
@@ -15,7 +16,7 @@ public class Time {
     private Jogador capitao;
 
     public Time(Long id, String nome, LocalDate dataCriacao, String corUniformePrincipal, String corUniformeSecundario) {
-        this.id = id;
+        this.setId(id);
         this.nome = nome;
         this.dataCriacao = dataCriacao;
         this.corUniformePrincipal = corUniformePrincipal;
@@ -51,6 +52,28 @@ public class Time {
         capitao = jogador;
     }
 
+    public void setId(Long id) {
+        id.toString();
+        this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Time time = (Time) o;
+        return Objects.equals(id, time.id) &&
+                Objects.equals(nome, time.nome) &&
+                Objects.equals(dataCriacao, time.dataCriacao) &&
+                Objects.equals(corUniformePrincipal, time.corUniformePrincipal) &&
+                Objects.equals(corUniformeSecundario, time.corUniformeSecundario) &&
+                Objects.equals(capitao, time.capitao);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome, dataCriacao, corUniformePrincipal, corUniformeSecundario, capitao);
+    }
 
     public String retornaUniformeJogoForaDeCasa(Time timeDeCasa){
         if(timeDeCasa.getCorUniformePrincipal().equalsIgnoreCase(this.corUniformePrincipal))

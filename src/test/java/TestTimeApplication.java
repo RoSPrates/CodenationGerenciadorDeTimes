@@ -30,6 +30,11 @@ public class TestTimeApplication {
         assertThat(meusTimes.buscarNomeTime(1L)).isEqualTo("Meu Time");
     }
 
+    @Test(expected = NullPointerException.class)
+    public void incluirTimeComIdNull() {
+        meusTimes.incluirTime(null, "Meu Time", LocalDate.now(), "Branco", "Preto");
+    }
+
     @Test
     public void incluirTimeComIdDuplicado() {
         meusTimes.incluirTime(1L, "Meu Time", LocalDate.now(), "Branco", "Preto");
